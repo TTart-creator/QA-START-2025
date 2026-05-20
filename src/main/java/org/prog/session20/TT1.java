@@ -21,6 +21,18 @@ public class TT1 {
 
         System.out.println("Hotel Room " + i + " is " + hotelRooms[i]);
 
+        String username = "admin";
+        System.out.println(username + "@gmail.com");
+
+
+
+        String email = "admin@gmail,com";
+        String badEmail = "admin@@gmail.com";
+
+        System.out.println(email.indexOf("@") == email.lastIndexOf("@"));
+        System.out.println(badEmail.indexOf("@") == badEmail.lastIndexOf("@"));
+
+
     }
 
 }
