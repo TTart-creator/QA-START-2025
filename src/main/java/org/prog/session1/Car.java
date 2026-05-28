@@ -1,5 +1,7 @@
 package org.prog.session1;
 
+import org.prog.session20.Car4;
+
 //TODO: HW4: add String model and make equals & hashCode work by model and color
 public class Car {
 

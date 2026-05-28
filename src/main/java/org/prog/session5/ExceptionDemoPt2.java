@@ -1,9 +1,5 @@
 package org.prog.session5;
 
-import org.prog.session1.Car;
-
-import java.io.IOException;
-
 public class ExceptionDemoPt2 {
 
     public static void main(String[] args) {
