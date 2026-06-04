@@ -1,9 +1,12 @@
 package org.prog.session20;
 
+import java.util.Random;
+import java.util.UUID;
+
 public class Plane {
-    private String count;
-    private String name;
-    private String maxcount;
+    public String count;
+    public String name;
+    public String maxcount;
 
     public static void main(String[] args) {
         Plane currentpassengers = new Plane();
@@ -14,9 +17,18 @@ public class Plane {
         maxpassengers.count = "ten";
         flightID.name = "AA-1001";
 
-        System.out.println(currentpassengers.count);
+
+/*        System.out.println(UUID.randomUUID().toString());
+        Random random = new Random();
+        random.nextInt(10);
+        for (int i = 0; i < 50; i++) {
+            System.out.println(random.nextInt(100, 200));
+        }*/
+
+
+
+       System.out.println(currentpassengers.count);
         System.out.println(maxpassengers.count);
         System.out.println(flightID.name);
-
     }
-}
+    }
