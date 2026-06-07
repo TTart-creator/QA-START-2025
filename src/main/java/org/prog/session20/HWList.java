@@ -17,6 +17,7 @@ public class HWList {
             String owner2 = "Mary";
             String owner3 = "Alex";
 
+
             // Map with owners as keys and cars as values
             Map<String, Car> ownerCars = new HashMap<>();
 
@@ -29,9 +30,9 @@ public class HWList {
                 car.setColor(randomColor());
             }
 
-            // Print result
+
             ownerCars.forEach((owner, car) ->
-                    System.out.println(owner + " owns " + car));
+                    System.out.println(owner + " own " + car.color));
         }
 
         public static String randomColor() {
