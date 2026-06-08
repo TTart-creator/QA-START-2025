@@ -1,3 +1,4 @@
+/*
 package org.prog.session20;
 
 import org.prog.session1.Car;
@@ -23,6 +24,7 @@ public class TT6 {
         cars2[0] = thatCar;
         cars2[1] = aliceCar;
         System.out.println(cars1[0] == cars2[0]);
+*/
 
 
 
@@ -36,5 +38,5 @@ public class TT6 {
 
         System.out.println(myCar == bobsCar);
         System.out.println(myCar == thatCar);*/
-    }
-}
+
+

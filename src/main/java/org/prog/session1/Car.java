@@ -7,6 +7,9 @@ public class Car {
 
     public String color;
 
+    public Car(String bmw) {
+    }
+
     public void goTo() {
         System.out.println(color + " car is going somewhere");
     }
@@ -32,5 +35,8 @@ public class Car {
 
     public String getColor() {
         return color;
+    }
+
+    public void setColor(String s) {
     }
 }
