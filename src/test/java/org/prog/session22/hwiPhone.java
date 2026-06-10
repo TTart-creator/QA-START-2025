@@ -1,0 +1,71 @@
+package org.prog.session22;
+
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
+
+import java.time.Duration;
+
+import static org.prog.session11.steps.WebSteps.driver;
+
+public class hwiPhone {
+
+    @Test
+    public void myTest() {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://allo.ua/ua/catalogsearch/result/?q=iphone");
+        driver.manage().deleteAllCookies();
+
+        try {
+            driver.get("https://allo.ua/ua/catalogsearch/result/?q=iphone");
+
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+            try {
+                // Example selectors - inspect the actual popup
+                WebElement closeButton = wait.until(
+                        ExpectedConditions.elementToBeClickable(
+                                By.cssSelector(
+                                        "button[class*='close'], .close, .popup-close"
+                                )
+                        )
+                );
+
+                closeButton.click();
+
+                System.out.println("Notification popup closed.");
+
+            } catch (TimeoutException e) {
+                System.out.println("Popup not displayed.");
+            }
+        } finally {
+            driver.get("https://allo.ua/ua/products/mobile/apple-iphone-17-pro-256gb-deep-blue-aluminum.html");
+            driver.quit();
+        }
+
+
+      /*  driver.get("https://allo.ua/ua/products/mobile/apple-iphone-17-pro-256gb-deep-blue-aluminum.html");*/
+
+      /*  WebElement iPhone = driver.findElement(By.xpath("//a[contains(@href, 'Blue')]"));
+        if (iPhone != null && iPhone.isDisplayed()) {
+
+         driver.findElements(By.tagName("button")).get(10).click();
+        }
+        WebElement search = driver.findElement(By.name("q"));
+        search.sendKeys("Ben Affleck");
+        search.sendKeys(Keys.ENTER);
+            driver.quit();
+*/
+
+        }
+    }
+
+
+
+

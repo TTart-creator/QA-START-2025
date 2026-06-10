@@ -2,7 +2,12 @@
 <suite name="Client side functionality" verbose="1">
     <test name="Registration Tests">
         <classes>
-            <class name="org.prog.SessionTT.HomeWorkTestNG_TT"/>
+            <class name="org.prog.session22.HomeWorktt"/>
+        </classes>
+    </test>
+    <test name="Registration Tests">
+        <classes>
+            <class name="org.prog.session22.Seleniumtt"/>
         </classes>
     </test>
 </suite>
