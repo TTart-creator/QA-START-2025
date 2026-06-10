@@ -45,7 +45,11 @@ public class hwiPhone {
                 System.out.println("Popup not displayed.");
             }
         } finally {
-            driver.get("https://allo.ua/ua/products/mobile/apple-iphone-17-pro-256gb-deep-blue-aluminum.html");
+            /*driver.get("https://allo.ua/ua/products/mobile/apple-iphone-17-pro-256gb-deep-blue-aluminum.html");*/
+
+            WebElement search = driver.findElement(By.xpath("//a[contains(@href, 'apple-iphone-17-pro-256gb-deep-blue-aluminum.html')]"));
+            search.sendKeys("iPhone");
+            search.sendKeys(Keys.ENTER);
             driver.quit();
         }
 
