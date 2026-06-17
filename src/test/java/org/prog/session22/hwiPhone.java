@@ -4,6 +4,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.tracing.opentelemetry.SeleniumSpanExporter;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
@@ -12,6 +13,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.prog.session11.steps.WebSteps.driver;
 
 public class hwiPhone {
@@ -50,6 +52,25 @@ public class hwiPhone {
             WebElement search = driver.findElement(By.xpath("//a[contains(@href, 'apple-iphone-17-pro-256gb-deep-blue-aluminum.html')]"));
             search.sendKeys("iPhone");
             search.sendKeys(Keys.ENTER);
+
+
+            WebElement priceElement = driver.findElement(By.xpath("//*[contains(text(),'₴')]"));
+            if (priceElement != null && priceElement.isDisplayed()) {
+
+                System.out.println(priceElement);
+
+                /*driver.findElements(By.tagName("₴")).get(10).click();*/
+            }
+
+/*            String priceText = priceElement.getText();
+
+            assertTrue(
+                    priceText.contains("₴"),
+                    "Price should contain the hryvnia symbol (₴). Actual text: " + priceText
+            );*/
+/*            WebElement currency = driver.findElement(By.xpath("//a[contains(@href, 'price__current-currency>₴</span>')]"));
+            currency.sendKeys("₴");
+            currency.sendKeys(Keys.ENTER);*/
             driver.quit();
         }
 
