@@ -46,7 +46,7 @@ public class hwiPhone {
             } catch (TimeoutException e) {
                 System.out.println("Popup not displayed.");
             }
-        } finally {
+
             /*driver.get("https://allo.ua/ua/products/mobile/apple-iphone-17-pro-256gb-deep-blue-aluminum.html");*/
 
             WebElement search = driver.findElement(By.xpath("//a[contains(@href, 'apple-iphone-17-pro-256gb-deep-blue-aluminum.html')]"));
@@ -54,10 +54,14 @@ public class hwiPhone {
             search.sendKeys(Keys.ENTER);
 
 
-            WebElement priceElement = driver.findElement(By.xpath("//*[contains(text(),'₴')]"));
+            WebElement priceElement = driver.findElement(By.xpath("//*[contains(@href,'a-product-price__current-price')]"));
             if (priceElement != null && priceElement.isDisplayed()) {
 
-                System.out.println(priceElement);
+
+                        WebElement price = driver.findElement(By.xpath("//*[contains(text(),'₴')]"));
+                String s = "Price should contain the hryvnia symbol (₴). Actual text:" + price;
+                System.out.println(s);
+
 
                 /*driver.findElements(By.tagName("₴")).get(10).click();*/
             }
@@ -71,11 +75,12 @@ public class hwiPhone {
 /*            WebElement currency = driver.findElement(By.xpath("//a[contains(@href, 'price__current-currency>₴</span>')]"));
             currency.sendKeys("₴");
             currency.sendKeys(Keys.ENTER);*/
+        } finally {
             driver.quit();
         }
 
 
-      /*  driver.get("https://allo.ua/ua/products/mobile/apple-iphone-17-pro-256gb-deep-blue-aluminum.html");*/
+        /*  driver.get("https://allo.ua/ua/products/mobile/apple-iphone-17-pro-256gb-deep-blue-aluminum.html");*/
 
       /*  WebElement iPhone = driver.findElement(By.xpath("//a[contains(@href, 'Blue')]"));
         if (iPhone != null && iPhone.isDisplayed()) {
@@ -88,9 +93,5 @@ public class hwiPhone {
             driver.quit();
 */
 
-        }
     }
-
-
-
-
+}
