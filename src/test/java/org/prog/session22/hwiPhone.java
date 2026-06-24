@@ -49,19 +49,13 @@ public class hwiPhone {
 
             /*driver.get("https://allo.ua/ua/products/mobile/apple-iphone-17-pro-256gb-deep-blue-aluminum.html");*/
 
-            WebElement search = driver.findElement(By.xpath("//a[contains(@href, 'apple-iphone-17-pro-256gb-deep-blue-aluminum.html')]"));
-            search.sendKeys("iPhone");
-            search.sendKeys(Keys.ENTER);
+            WebElement goods = driver.findElement(By.xpath("//h1[contains(text()), 'Apple iPhone 17 Pro 256GB Deep Blue (MG8J4)')]"));
+            if (goods != null && goods.isDisplayed()){
+                WebElement price = goods.findElement(By.className("v-pb__price__row"));
+                // тут проверяете что в элементе price есть символ гривны
+            }
 
-
-            WebElement priceElement = driver.findElement(By.xpath("//*[contains(@href,'a-product-price__current-price')]"));
-            if (priceElement != null && priceElement.isDisplayed()) {
-
-
-                        WebElement price = driver.findElement(By.xpath("//*[contains(text(),'₴')]"));
-                String s = "Price should contain the hryvnia symbol (₴). Actual text:" + price;
-                System.out.println(s);
-
+            System.out.println(goods);
 
                 /*driver.findElements(By.tagName("₴")).get(10).click();*/
             }
