@@ -1,6 +1,7 @@
-package org.prog.session5;
+package org.prog.session20;
 
-public class ExceptionDemoPt2 {
+public class TT7exc {
+    public static int counter = 0;
 
     public static void main(String[] args) {
         System.out.println("---------------------");
@@ -12,17 +13,19 @@ public class ExceptionDemoPt2 {
 
     public static void smth1(boolean err) {
         try {
-            System.out.println("Before smth 2");
+            System.out.println("Befor smth 2");
             smth2(err);
             System.out.println("After smth 2");
-//        } catch (IndexOutOfBoundsException | ArithmeticException e) {
-//            System.out.println("AR EXCEPTION HERE!");
-//        } catch (RuntimeException e) {
-//            System.out.println("RT IO EXCEPTION HERE!");
-        } catch (Exception e) {
+
+/*        } catch(ArithmeticException e) {
+            System.out.println("AE EXCEPTION HERE!");
+        } catch(RuntimeException e) {
+            System.out.println("RT EXCEPTION HERE!");*/
+        } catch(Exception e) {
             System.out.println("EXCEPTION HERE!");
-        } finally {
-            System.out.println("this always runs");
+
+        }  finally {
+
         }
     }
 
@@ -42,3 +45,4 @@ public class ExceptionDemoPt2 {
         }
     }
 }
+

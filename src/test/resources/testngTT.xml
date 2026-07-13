@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Client side functionality" verbose="1">
+    <test name="Registration Tests">
+        <classes>
+            <class name="org.prog.session22.HomeWorktt"/>
+        </classes>
+    </test>
+    <test name="Registration Tests">
+        <classes>
+            <class name="org.prog.session22.SeleniumWait"/>
+        </classes>
+    </test>
+</suite>

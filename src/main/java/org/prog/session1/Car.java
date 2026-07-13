@@ -1,9 +1,14 @@
 package org.prog.session1;
 
+import org.prog.session20.Car4;
+
 //TODO: HW4: add String model and make equals & hashCode work by model and color
 public class Car {
 
     public String color;
+
+    public Car(String bmw) {
+    }
 
     public void goTo() {
         System.out.println(color + " car is going somewhere");
@@ -30,5 +35,8 @@ public class Car {
 
     public String getColor() {
         return color;
+    }
+
+    public void setColor(String s) {
     }
 }
