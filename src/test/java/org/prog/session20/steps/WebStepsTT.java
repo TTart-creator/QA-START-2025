@@ -16,7 +16,7 @@ public class WebStepsTT {
 
     @Given("I load google page")
     public void loadGooglePage() {
-       googlePage.loadPage();
+        googlePage.loadPage();
     }
 
     @Given("I accept cookies if they are present")
@@ -30,6 +30,7 @@ public class WebStepsTT {
         googlePage.setSearchFieldValue(DBStepsTT.RandomPersonName);
 
     }
+
     @Then("Search field contains random person name")
     public void searchFieldWithRandomPersonName() {
         Assert.assertEquals(googlePage.getSearchFieldValue(),

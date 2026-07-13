@@ -30,7 +30,7 @@ public class DBStepsTT {
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT * FROM Persons ORDER BY RAND() LIMIT 1");
         if (resultSet.next()) {
-           RandomPersonName = resultSet.getString("FirstName") + " " + resultSet.getString("LastName");
+            RandomPersonName = resultSet.getString("FirstName") + " " + resultSet.getString("LastName");
         } else {
             Assert.fail("No records found");
         }

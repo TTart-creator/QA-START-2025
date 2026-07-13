@@ -9,3 +9,4 @@ And I accept cookies if they are present
 
 When I set search to random person name
 Then Search field contains random person name
+
